@@ -13,7 +13,6 @@ public class TestClassLive implements Serializable{
     private String name;
     private int value;
     private TestClassLive2 nestedClass;
-    private List<TestClassLive3> nestedList;
 
     public TestClassLive() {
     }
@@ -41,10 +40,6 @@ public class TestClassLive implements Serializable{
         return Id;
     }
 
-    public List<TestClassLive3> getNestedList() {
-        return nestedList;
-    }
-
     public TestClassLive2 getNestedClass() {
         return nestedClass;
     }
@@ -53,4 +48,13 @@ public class TestClassLive implements Serializable{
         this.nestedClass = nestedClass;
     }
 
+    @Override
+    public String toString() {
+        return "TestClassLive{" +
+                "Id='" + Id + '\'' +
+                ", name='" + name + '\'' +
+                ", value=" + value +
+                ", nestedClass=" + nestedClass +
+                '}';
+    }
 }

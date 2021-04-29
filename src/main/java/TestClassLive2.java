@@ -1,35 +1,44 @@
 import org.redisson.api.annotation.REntity;
 import org.redisson.api.annotation.RId;
 import org.redisson.liveobject.resolver.LongGenerator;
+import org.redisson.liveobject.resolver.UUIDGenerator;
 
 @REntity
 public class TestClassLive2 {
-    @RId
-    private long id;
-    private int value2;
-    private String address;
+    @RId(generator = UUIDGenerator.class)
+    private String Id;
+    private int value;
+    private String data;
+
     protected TestClassLive2() {
     }
 
-    public TestClassLive2(long id, int value) {
+    public TestClassLive2(String Id) {
         super();
-        this.id=id;
-        this.value2 = value;
+        this.Id=Id;
     }
 
-    public int getValue2() {
-        return value2;
+    public int getValue() {
+        return value;
     }
 
-    public void setValue2(int value2) {
-        this.value2 = value2;
+    public void setValue(int value) {
+        this.value = value;
     }
 
-    public String getAddress() {
-        return address;
+    public String getData() {
+        return data;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return "TestClassLive2{" +
+                "value=" + value +
+                ", data='" + data + '\'' +
+                '}';
     }
 }

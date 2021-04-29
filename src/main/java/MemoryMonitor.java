@@ -1,8 +1,9 @@
-import org.apache.log4j.Logger;
 import java.util.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class MemoryMonitor extends Observable implements Runnable {
-    private static final Logger log = Logger.getLogger(MemoryMonitor.class);
+    private Log log = LogFactory.getLog(MemoryMonitor.class);
     private static MemoryMonitor instance;
     private static double currentToMaxThreshold = 0.9;
     private static double freeMemThreshold = 0.2;
